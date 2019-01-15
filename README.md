@@ -4,6 +4,6 @@
 Groupe:
 
 - Nathan Haro
-- Mihaily Varga
+- Mihaly Varga
 - Maine Bensassi Nour
 - Yohann Guerpillon
