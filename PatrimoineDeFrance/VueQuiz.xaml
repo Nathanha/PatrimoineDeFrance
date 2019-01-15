@@ -1,0 +1,158 @@
+﻿<Page
+    x:Class="PatrimoineDeFrance.VueQuiz"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PatrimoineDeFrance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style x:Key="ButtonStyleUser" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
+            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <Grid  Margin="0,0,0,0" >
+                                    <Ellipse x:Name="ButtonShape" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="#FFFDFCFC" HorizontalAlignment="Center"
+                                    Stroke="#000000" StrokeThickness="2" VerticalAlignment="Center"/>
+                                    <!--This glyph is the Contact (head and shoulders silhouette) glyph. -->
+                                    <TextBlock x:Name="Icon" Text="&#xE13D;" FontFamily="Segoe UI Symbol" FontSize="30" HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                                </Grid>
+                                <TextBlock x:Name="ButtonContent" Text="{TemplateBinding Content}" HorizontalAlignment="Center"
+                                FontFamily="Segoe UI" FontSize="12"/>
+                            </StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="{Binding Source={StaticResource SymbolThemeFontFamily}, Path=Color}" 
+                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" 
+                                                        Storyboard.TargetName="ButtonShape" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="ButtonPressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#eeeeee" 
+                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" 
+                                                        Storyboard.TargetName="ButtonEllipse" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <!--grid de gauche principale-->
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="72" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="83" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="QUIZ" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="50" TextAlignment="Center" FocusVisualPrimaryBrush="Black"/>
+            <ListBox Grid.Row="1" Grid.Column="0" x:Name="lstBoxNiveau" ItemsSource="{Binding}" SelectionChanged="lstBoxNiveau_SelectionChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:Name="SingleLineDataTemplate">
+                        <StackPanel Orientation="Horizontal" Height="44">
+                            <Image Source="Assets/college-graduation.png" Height="30" Width="30" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="txtCourList" Text="{Binding Label}" VerticalAlignment="Center" FontSize="20" Width="200" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!--grid de gauche en bas pour boutons nav-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button x:Name="btnHome" Grid.Row="0" Grid.Column="0" Content="Accueil" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="btnHome_Click"/>
+                <Button x:Name="btnQuizzPage" Grid.Row="0" Grid.Column="1" Content="Cours" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="btnCourPage_Click"/>
+            </Grid>
+        </Grid>
+
+        <!--grid de droite-->
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90" />
+                <RowDefinition Height="74" />
+                <RowDefinition Height="270" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="btnUser" Grid.Row="0" Style="{StaticResource ButtonStyleUser}" Height="70" Width="70" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Click="btnUser_Click"/>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,80,0" Text="Utilisateur" TextWrapping="Wrap" VerticalAlignment="Center" Height="25" Width="120" FontSize="20" TextAlignment="Center"/>
+
+            <TextBlock x:Name="questionTextBlock" Grid.Row="1" FontSize="25" TextAlignment="Center" HorizontalAlignment="Center"  Text="Question ?" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="650"/>
+
+            <Image x:Name="imgQuiz" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="485" Source="Assets/imageTest.jpg" Margin="0,10,0,0"/>
+
+            <RadioButton x:Name="radioReponse1" GroupName="ReponseGroupName" Grid.Row="3" Content="Reponse1" HorizontalAlignment="Center" Margin="0,0,300,0" VerticalAlignment="Center" Width="161">
+                <RadioButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton x:Name="radioReponse2" GroupName="ReponseGroupName" Grid.Row="3" Content="Reponse2" HorizontalAlignment="Center" Margin="200,0,0,0" VerticalAlignment="Center" Width="161">
+                <RadioButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton x:Name="radioReponse3" GroupName="ReponseGroupName" Grid.Row="4" Content="Reponse3" HorizontalAlignment="Center" Margin="0,0,300,0" VerticalAlignment="Center" Width="161">
+                <RadioButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton x:Name="radioReponse4" GroupName="ReponseGroupName" Grid.Row="4" Content="Reponse4" HorizontalAlignment="Center" Margin="200,0,0,0" VerticalAlignment="Center" Width="161">
+                <RadioButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <Button x:Name="btnSuivant" Grid.Row="5" Content="SUIVANT" Click="btnSuivant_Click"  HorizontalAlignment="Right" Margin="0,0,30,0" VerticalAlignment="Center" Height="45" Width="100"/>
+        </Grid>
+    </Grid>
+</Page>
+

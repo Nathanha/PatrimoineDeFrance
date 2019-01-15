@@ -1,0 +1,142 @@
+﻿<Page
+    x:Class="PatrimoineDeFrance.VueCompte"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PatrimoineDeFrance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style x:Key="ButtonUser" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
+            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <Grid  Margin="0,0,0,0" >
+                                    <Ellipse x:Name="ButtonShape" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="#CCD0D0D0" HorizontalAlignment="Center"
+                                    Stroke="#000000" StrokeThickness="2" VerticalAlignment="Center"/>
+                                    <!--This glyph is the Contact (head and shoulders silhouette) glyph. -->
+                                    <TextBlock x:Name="Icon" Text="&#xE13D;" FontFamily="Segoe UI Symbol" FontSize="100" HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                                </Grid>
+                                <TextBlock x:Name="ButtonContent" Text="{TemplateBinding Content}" HorizontalAlignment="Center"
+                                FontFamily="Segoe UI" FontSize="12"/>
+                            </StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="{Binding Source={StaticResource SymbolThemeFontFamily}, Path=Color}" 
+                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" 
+                                                        Storyboard.TargetName="ButtonShape" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="ButtonPressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#eeeeee" 
+                                                        Storyboard.TargetProperty="#CCD0D0D0" 
+                                                        Storyboard.TargetName="ButtonEllipse" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonAvancementUser" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
+            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <Grid  Margin="0,0,0,0" >
+                                    <Ellipse x:Name="ButtonShape" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="#CCD0D0D0" HorizontalAlignment="Center"
+                                    Stroke="#000000" StrokeThickness="2" VerticalAlignment="Center"/>
+                                    <!--This glyph is the Contact (head and shoulders silhouette) glyph. -->
+                                    <TextBlock x:Name="valeurAvencement" Text="{TemplateBinding Content}" FontFamily="Segoe UI Symbol" FontSize="70" HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                                </Grid>
+                                <TextBlock x:Name="ButtonContent" Text="{TemplateBinding Content}" HorizontalAlignment="Center"
+                                FontFamily="Segoe UI" FontSize="12"/>
+                            </StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="{Binding Source={StaticResource SymbolThemeFontFamily}, Path=Color}" 
+                                                        Storyboard.TargetProperty="#CCD0D0D0" 
+                                                        Storyboard.TargetName="ButtonShape" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="ButtonPressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#eeeeee" 
+                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" 
+                                                        Storyboard.TargetName="ButtonEllipse" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220" />
+            <RowDefinition Height="65" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
+            <Rectangle.Fill>
+                <AcrylicBrush TintColor="#CCD0D0D0"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Style="{StaticResource ButtonAvancementUser}" Grid.Row="0" Grid.Column="1" Content="10%" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Height="150" Width="150"/>
+        <Button Style="{StaticResource ButtonUser}" Grid.Row="0" Grid.Column="0" Content="Button" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Height="150" Width="150" RenderTransformOrigin="0.58,0.038"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Text="Cours" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Text="Niveaux" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50"/>
+        <ListBox x:Name="lstBoxCours" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <ListBox x:Name="lstBoxNiveau" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    </Grid>
+</Page>
