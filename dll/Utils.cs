@@ -19,7 +19,7 @@ namespace dll
             {
                 Title = title,
                 Content = contenu,
-                CloseButtonText = "Ok" //hey
+                CloseButtonText = "Ok" //heyy
             };
 
             ContentDialogResult result = await infoDialog.ShowAsync();
