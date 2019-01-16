@@ -1,7 +1,9 @@
 # PatrimoineDeFrance
 
+Accroche du Projet:
+Notre projet est une application Windows regroupant des cours et des quizz sur les bâtiments classés au Patrimoine de France. 
 
-Groupe:
+Nom des Etudiants:
 
 - Nathan Haro
 - Mihaly Varga
