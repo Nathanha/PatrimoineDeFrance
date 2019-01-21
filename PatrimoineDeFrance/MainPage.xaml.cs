@@ -1,6 +1,7 @@
 ﻿using dll.Metiers;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -32,6 +33,7 @@ namespace PatrimoineDeFrance
         public MainPage()
         {
             this.InitializeComponent();
+            Debug.WriteLine("Test");
             stateUser = false;
             if (Application.Current.Resources.ContainsKey("connected"))
             {
@@ -41,15 +43,23 @@ namespace PatrimoineDeFrance
             {
                 connected = false;
             }
+            display();
+        }
+
+        public void display()
+        {
             if (connected)
             {
                 btnConnexion.Content = "Compte";
                 btnInscription.Content = "Déconnexion";
+                Debug.WriteLine("TestConnected");
             }
             else
             {
-                btnConnexion.Content = "Connexion";
-                btnInscription.Content = "Inscription";
+                Debug.WriteLine("TestNotconnected");
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(VueUtilisateur));
+                Debug.WriteLine("TestNotconnected2");
             }
         }
 
