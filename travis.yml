@@ -1,4 +1,4 @@
 language: csharp
-PatrimoineDeFrance.sln
+solution: PatrimoineDeFrance.sln
 script:
     - echo "Works !"
