@@ -1,0 +1,4 @@
+language: csharp
+PatrimoineDeFrance.sln
+script:
+    - echo "Works !"
