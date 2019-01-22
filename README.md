@@ -25,3 +25,6 @@ Nom des Etudiants:
 ![Image Progression Eleve](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/DS_Progression_eleve.PNG)
 #### Quizz
 ![Image Quizz](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/DS_Quizz.PNG)
+#### Ajouter - Supprimer (Prof)
+![Image Quizz](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/DS_Ajouter.PNG)
+![Image Quizz](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/DS_Supprimer.PNG)
