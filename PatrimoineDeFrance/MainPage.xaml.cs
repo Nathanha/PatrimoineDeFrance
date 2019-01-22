@@ -29,7 +29,6 @@ namespace PatrimoineDeFrance
         bool connected;
         // Question uneQuestion = new Question();
 
-
         public MainPage()
         {
             this.InitializeComponent();
@@ -43,11 +42,6 @@ namespace PatrimoineDeFrance
             {
                 connected = false;
             }
-            display();
-        }
-
-        public void display()
-        {
             if (connected)
             {
                 btnConnexion.Content = "Compte";
@@ -93,6 +87,7 @@ namespace PatrimoineDeFrance
             }
         }
 
+        //Boutton de connexion
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
         {
             if (connected)
