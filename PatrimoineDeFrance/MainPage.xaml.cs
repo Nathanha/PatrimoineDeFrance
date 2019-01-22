@@ -29,7 +29,6 @@ namespace PatrimoineDeFrance
         bool connected;
         // Question uneQuestion = new Question();
 
-
         public MainPage()
         {
             this.InitializeComponent();
