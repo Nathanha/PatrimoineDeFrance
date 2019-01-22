@@ -43,11 +43,6 @@ namespace PatrimoineDeFrance
             {
                 connected = false;
             }
-            display();
-        }
-
-        public void display()
-        {
             if (connected)
             {
                 btnConnexion.Content = "Compte";
