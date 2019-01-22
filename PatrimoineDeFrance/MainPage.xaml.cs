@@ -87,6 +87,7 @@ namespace PatrimoineDeFrance
             }
         }
 
+        //Boutton de connexion
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
         {
             if (connected)
