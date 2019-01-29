@@ -108,9 +108,6 @@
     <Compile Include="VueQuiz.xaml.cs">
       <DependentUpon>VueQuiz.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VueUtilisateur.xaml.cs">
-      <DependentUpon>VueUtilisateur.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -190,10 +187,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VueQuiz.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VueUtilisateur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

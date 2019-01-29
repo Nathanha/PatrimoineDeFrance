@@ -44,17 +44,23 @@ namespace PatrimoineDeFrance
             }
             if (connected)
             {
-                btnConnexion.Content = "Compte";
-                btnInscription.Content = "Déconnexion";
-                Debug.WriteLine("TestConnected");
+
             }
             else
             {
-                Debug.WriteLine("TestNotconnected");
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(VueUtilisateur));
-                Debug.WriteLine("TestNotconnected2");
+                inputName.Visibility = Visibility.Visible;
+                inputMdp.Visibility = Visibility.Visible;
+                btnValidation.Visibility = Visibility.Visible;
+                gridMain.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void btnConnexion_Click(object sender, RoutedEventArgs e)
+        {
+            inputName.Visibility = Visibility.Collapsed;
+            inputMdp.Visibility = Visibility.Collapsed;
+            btnValidation.Visibility = Visibility.Collapsed;
+            gridMain.Visibility = Visibility.Visible;
         }
 
         private void btnCours_Click(object sender, RoutedEventArgs e)
@@ -87,35 +93,15 @@ namespace PatrimoineDeFrance
             }
         }
 
-        //Boutton de connexion
-        private void btnConnexion_Click(object sender, RoutedEventArgs e)
+        private void BtnCompte_Click(object sender, RoutedEventArgs e)
         {
-            if (connected)
-            {
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(VueCompte));
-            }
-            else
-            {
-                Application.Current.Resources["state"] = true;
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(VueUtilisateur));
-            }
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(VueCompte));
         }
-        private void btnInscription_Click(object sender, RoutedEventArgs e)
+
+        private void BtnDeco_Click(object sender, RoutedEventArgs e)
         {
-            if (connected)
-            {
-                Application.Current.Resources["connected"] = false;
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(MainPage));
-            }
-            else
-            {
-                Application.Current.Resources["state"] = false;
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(VueUtilisateur));
-            }
+
         }
     }
 }
