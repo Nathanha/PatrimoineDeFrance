@@ -37,5 +37,5 @@ Nom des Etudiants:
 ![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MProf.PNG)
 ![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MConnexion.PNG)
 ![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MACours.PNG)
-![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MAQuizz.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MAQuizz2.PNG)
 ![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MAEleve.PNG)
