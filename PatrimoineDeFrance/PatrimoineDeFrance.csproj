@@ -99,11 +99,23 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VueAjouterCours.xaml.cs">
+      <DependentUpon>VueAjouterCours.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VueAjouterEleve.xaml.cs">
+      <DependentUpon>VueAjouterEleve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VueAjouterQuestion.xaml.cs">
+      <DependentUpon>VueAjouterQuestion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VueCompte.xaml.cs">
       <DependentUpon>VueCompte.xaml</DependentUpon>
     </Compile>
     <Compile Include="VueCours.xaml.cs">
       <DependentUpon>VueCours.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VueProf.xaml.cs">
+      <DependentUpon>VueProf.xaml</DependentUpon>
     </Compile>
     <Compile Include="VueQuiz.xaml.cs">
       <DependentUpon>VueQuiz.xaml</DependentUpon>
@@ -178,11 +190,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="VueAjouterCours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VueAjouterEleve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VueAjouterQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VueCompte.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VueCours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VueProf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

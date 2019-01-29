@@ -1,0 +1,144 @@
+﻿<Page
+    x:Class="PatrimoineDeFrance.VueProf"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PatrimoineDeFrance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txtProf" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Professeur" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="70"/>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Image x:Name="imgProf" Grid.Column="0" Grid.Row="0" Source="Assets/PontDuGard.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Image>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="txtShowNom" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="NOM :" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+                <TextBlock x:Name="txtNom" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Text="none" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+                <TextBlock x:Name="txtShowPrenom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Text="PRENOM :" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+                <TextBlock x:Name="txtPrenom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Text="none" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="txtListEleve" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Liste des élèves" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+            <TextBlock x:Name="txtListCours" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="Liste des cours" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+            <TextBlock x:Name="txtListQuiz" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Text="Liste des quiz" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+            <ListBox Grid.Row="1" Grid.Column="0" x:Name="lstBoxEleve"  ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,10,30,10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:Name="EleveDataTemplate">
+                        <StackPanel Orientation="Horizontal" Height="44">
+                            <TextBlock x:Name="txtEleveList" Text="{Binding Titre}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Grid.Row="1" Grid.Column="1" x:Name="lstBoxCours"  ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,10,30,10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:Name="CoursDataTemplate">
+                        <StackPanel Orientation="Horizontal" Height="44">
+                            <TextBlock x:Name="txtCoursList" Text="{Binding Titre}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Grid.Row="1" Grid.Column="2" x:Name="lstBoxQuiz"  ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,10,30,10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:Name="QuizDataTemplate">
+                        <StackPanel Orientation="Horizontal" Height="44">
+                            <TextBlock x:Name="txtQuizList" Text="{Binding Titre}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnAjouterEleve" Grid.Row="0" Grid.Column="0" Content="Ajouter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,0,10,10" Click="BtnAjouterEleve_Click"/>
+                <Button x:Name="btnModifierEleve" Grid.Row="0" Grid.Column="1" Content="Modifier" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,10" Click="BtnModifierEleve_Click"/>
+                <Button x:Name="btnSupprimerEleve" Grid.Row="0" Grid.Column="2" Content="Supprimer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,30,10" Click="BtnSupprimerEleve_Click"/>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnAjouterCours" Grid.Row="0" Grid.Column="0" Content="Ajouter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,0,10,10" Click="BtnAjouterCours_Click"/>
+                <Button x:Name="btnModifierCours" Grid.Row="0" Grid.Column="1" Content="Modifier" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,10" Click="BtnModifierCours_Click"/>
+                <Button x:Name="btnSupprimerCours" Grid.Row="0" Grid.Column="2" Content="Supprimer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,30,10" Click="BtnSupprimerCours_Click"/>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnAjouterQuiz" Grid.Row="0" Grid.Column="0" Content="Ajouter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="30,0,10,10" Click="BtnAjouterQuiz_Click"/>
+                <Button x:Name="btnModifierQuiz" Grid.Row="0" Grid.Column="1" Content="Modifier" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,10" Click="BtnModifierQuiz_Click"/>
+                <Button x:Name="btnSupprimerQuiz" Grid.Row="0" Grid.Column="2" Content="Supprimer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,30,10" Click="BtnSupprimerQuiz_Click"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

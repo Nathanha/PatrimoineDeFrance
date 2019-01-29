@@ -9,58 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <Style x:Key="ButtonUser" TargetType="Button">
-            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
-            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
-            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
-            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
-            <Setter Property="Padding" Value="8,4,8,4"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
-            <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
-            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
-            <Setter Property="FocusVisualMargin" Value="-3"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <StackPanel Orientation="Vertical">
-                                <Grid  Margin="0,0,0,0" >
-                                    <Ellipse x:Name="ButtonShape" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="#CCD0D0D0" HorizontalAlignment="Center"
-                                    Stroke="#000000" StrokeThickness="2" VerticalAlignment="Center"/>
-                                    <!--This glyph is the Contact (head and shoulders silhouette) glyph. -->
-                                    <TextBlock x:Name="Icon" Text="&#xE13D;" FontFamily="Segoe UI Symbol" FontSize="100" HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"/>
-                                </Grid>
-                                <TextBlock x:Name="ButtonContent" Text="{TemplateBinding Content}" HorizontalAlignment="Center"
-                                FontFamily="Segoe UI" FontSize="12"/>
-                            </StackPanel>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal"/>
-                                    <VisualState x:Name="PointerOver">
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0" To="{Binding Source={StaticResource SymbolThemeFontFamily}, Path=Color}" 
-                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" 
-                                                        Storyboard.TargetName="ButtonShape" />
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="ButtonPressed">
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0" To="#eeeeee" 
-                                                        Storyboard.TargetProperty="#CCD0D0D0" 
-                                                        Storyboard.TargetName="ButtonEllipse" />
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
 
         <Style x:Key="ButtonAvancementUser" TargetType="Button">
             <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
@@ -81,7 +29,7 @@
                         <Grid>
                             <StackPanel Orientation="Vertical">
                                 <Grid  Margin="0,0,0,0" >
-                                    <Ellipse x:Name="ButtonShape" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="#CCD0D0D0" HorizontalAlignment="Center"
+                                    <Ellipse x:Name="ButtonShape" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="#FFFFFF" HorizontalAlignment="Center"
                                     Stroke="#000000" StrokeThickness="2" VerticalAlignment="Center"/>
                                     <!--This glyph is the Contact (head and shoulders silhouette) glyph. -->
                                     <TextBlock x:Name="valeurAvencement" Text="{TemplateBinding Content}" FontFamily="Segoe UI Symbol" FontSize="70" HorizontalAlignment="Center"
@@ -119,24 +67,45 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
             <RowDefinition Height="220" />
-            <RowDefinition Height="65" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
-            <Rectangle.Fill>
-                <AcrylicBrush TintColor="#CCD0D0D0"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Button Style="{StaticResource ButtonAvancementUser}" Grid.Row="0" Grid.Column="1" Content="10%" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Height="150" Width="150"/>
-        <Button Style="{StaticResource ButtonUser}" Grid.Row="0" Grid.Column="0" Content="Button" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Height="150" Width="150" RenderTransformOrigin="0.58,0.038"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Text="Cours" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Text="Niveaux" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50"/>
-        <ListBox x:Name="lstBoxCours" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <ListBox x:Name="lstBoxNiveau" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <TextBlock x:Name="txtUser" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Text="Utilisateur" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="70" Margin="30,0,0,0"/>
+        <Image x:Name="imgUser" Grid.Column="0" Grid.Row="1" Source="Assets/PontDuGard.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Image>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="roundNiveau" Style="{StaticResource ButtonAvancementUser}" Grid.Row="0" Grid.Column="1" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0" Height="150" Width="150"/>
+            <TextBlock x:Name="txtNiveau" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Text="Niveaux" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="70" Margin="30,120,0,0"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="txtShowNom" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Text="NOM :" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50" Margin="30,0,0,0"/>
+            <TextBlock x:Name="txtNom" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Text="none" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50" Margin="30,0,0,0"/>
+            <TextBlock x:Name="txtShowPrenom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Text="PRENOM :" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50" Margin="30,0,0,0"/>
+            <TextBlock x:Name="txtPrenom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Text="none" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50" Margin="30,0,0,0"/>
+            <TextBlock x:Name="txtShowClasse" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Text="CLASSE :" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50" Margin="30,0,0,0"/>
+            <TextBlock x:Name="txtClasse" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Text="none" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="50" Margin="30,0,0,0"/>
+        </Grid>
     </Grid>
 </Page>

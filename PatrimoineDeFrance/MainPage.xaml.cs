@@ -41,13 +41,6 @@ namespace PatrimoineDeFrance
             else
             {
                 connected = false;
-            }
-            if (connected)
-            {
-
-            }
-            else
-            {
                 inputName.Visibility = Visibility.Visible;
                 inputMdp.Visibility = Visibility.Visible;
                 btnValidation.Visibility = Visibility.Visible;
@@ -101,7 +94,8 @@ namespace PatrimoineDeFrance
 
         private void BtnDeco_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(VueProf));
         }
     }
 }
