@@ -28,3 +28,14 @@ Nom des Etudiants:
 #### Ajouter - Supprimer (Prof)
 ![Image Quizz](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/DS_Ajouter.PNG)
 ![Image Quizz](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/DS_Supprimer.PNG)
+
+## Maquette de l'application
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MAcceuil.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MCours.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MQuizz.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MUtilisateur.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MProf.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MConnexion.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MACours.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MAQuizz.PNG)
+![Image](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/MAEleve.PNG)
