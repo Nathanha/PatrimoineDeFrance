@@ -9,6 +9,50 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock x:Name="txtAjoutCours" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Ajouter des cours" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="70"/>
+        <Button x:Name="btnAjouterCours" Grid.Row="2" Grid.Column="0" Width="200" Height="50" Content="Ajouter" HorizontalAlignment="Center" VerticalAlignment="Top" Click="BtnAjouterCours_Click"/>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="txtAffCours" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Cours" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+            <TextBlock x:Name="txtAffImg" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="Image" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="40"/>
+            <StackPanel x:Name="inputTxtCour" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Margin="50,0,0,0">
+                <TextBox x:Name="txtInput" PlaceholderText="Entrer le texte du noveau cour" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel x:Name="inputUrl" VerticalAlignment="Stretch" Width="200" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0">
+                    <TextBox x:Name="urlInput" PlaceholderText="URL" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </StackPanel>
+                <ComboBox x:Name="FontsCombo" Header="Niveaux" Height="44" Width="150" ItemsSource="{Binding Niveau}" DisplayMemberPath="Source" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch"/>
+
+            </Grid>
+            
+        </Grid>
     </Grid>
 </Page>

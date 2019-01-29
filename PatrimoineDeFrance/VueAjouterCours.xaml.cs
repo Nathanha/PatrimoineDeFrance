@@ -26,5 +26,10 @@ namespace PatrimoineDeFrance
         {
             this.InitializeComponent();
         }
+
+        private void BtnAjouterCours_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
