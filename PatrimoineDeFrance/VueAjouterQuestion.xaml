@@ -9,6 +9,67 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txtAjoutQuestion" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Ajouter question et ses réponses" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="70"/>
+        <Button x:Name="btnEnregistrerQuestion" Grid.Row="2" Grid.Column="0" Content="Enregistrer" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="60" FontSize="30" Click="BtnEnregistrerQuestion_Click"/>
 
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        
+            <TextBlock x:Name="txtQuiz" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Quiz" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
+            <TextBlock x:Name="txtReponses" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="Réponses" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
+            <TextBlock x:Name="txtImage" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Text="Image" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
+
+            <StackPanel x:Name="inputQuestion" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Margin="100,0,100,0">
+                <TextBox x:Name="QuestionInput" PlaceholderText="Question" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputNiveau" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="0" Margin="100,0,100,0">
+                <TextBox x:Name="niveauInput" PlaceholderText="Niveau" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputReponseBonne" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="0" Margin="100,0,100,0">
+                <TextBox x:Name="reponseBonneInput" PlaceholderText="Reponse (bonne)" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputReponse1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Margin="100,0,100,0">
+                <TextBox x:Name="reponse1Input" PlaceholderText="Réponse1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputNiveau1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="1" Margin="100,0,100,0">
+                <TextBox x:Name="niveau1Input" PlaceholderText="Niveau" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputReponse2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="1" Margin="100,0,100,0">
+                <TextBox x:Name="reponse2Input" PlaceholderText="Réponse2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputNiveau2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="4" Grid.Column="1" Margin="100,0,100,0">
+                <TextBox x:Name="niveau2Input" PlaceholderText="Niveau" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputReponse3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="5" Grid.Column="1" Margin="100,0,100,0">
+                <TextBox x:Name="reponse3Input" PlaceholderText="Réponse3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputNiveau3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="6" Grid.Column="1" Margin="100,0,100,0">
+                <TextBox x:Name="niveau3Input" PlaceholderText="Niveau" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel x:Name="inputURL" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="2" Margin="100,0,100,0">
+                <TextBox x:Name="urlInput" PlaceholderText="URL" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

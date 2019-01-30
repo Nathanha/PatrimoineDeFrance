@@ -28,7 +28,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Image x:Name="imgProf" Grid.Column="0" Grid.Row="0" Source="Assets/PontDuGard.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Image>
+            <Image x:Name="imgProf" Grid.Column="0" Grid.Row="0" Source="Assets/PontDuGard.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="40,0,0,0"></Image>
 
             <Grid Grid.Row="0" Grid.Column="1">
                 <Grid.ColumnDefinitions>
