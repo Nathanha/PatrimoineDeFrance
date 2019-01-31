@@ -26,5 +26,10 @@ namespace PatrimoineDeFrance
         {
             this.InitializeComponent();
         }
+
+        private void BtnEnregistrerEleve_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -95,7 +95,7 @@ namespace PatrimoineDeFrance
         private void BtnDeco_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(VueAjouterQuestion));
+            rootFrame.Navigate(typeof(VueAjouterEleve));
         }
     }
 }
