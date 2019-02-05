@@ -25,6 +25,7 @@ namespace PatrimoineDeFrance
     public sealed partial class MainPage : Page
     {
         private List<Question> listQuestion = Question.ListQuestions();
+        private Utilisateur utilisateur;
         bool stateUser;
         bool connected;
         bool isProfessor;
@@ -52,10 +53,22 @@ namespace PatrimoineDeFrance
 
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
         {
-            inputName.Visibility = Visibility.Collapsed;
-            inputMdp.Visibility = Visibility.Collapsed;
-            btnValidation.Visibility = Visibility.Collapsed;
-            gridMain.Visibility = Visibility.Visible;
+            utilisateur = Utilisateur.GetUser(nomInput.Text);
+            if (utilisateur.MotDePasse == mdpInput.Text)
+            {
+                inputName.Visibility = Visibility.Collapsed;
+                inputMdp.Visibility = Visibility.Collapsed;
+                btnValidation.Visibility = Visibility.Collapsed;
+                txtError.Text = "";
+                mdpInput.Text = "";
+                nomInput.Text = "";
+                gridMain.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                txtError.Text = "Mot de passe incorect";
+            }
+
         }
 
         private void btnCours_Click(object sender, RoutedEventArgs e)
