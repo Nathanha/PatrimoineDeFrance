@@ -111,10 +111,12 @@
     <Compile Include="Metiers\Manager\CoursManager.cs" />
     <Compile Include="Metiers\Manager\ImageManager.cs" />
     <Compile Include="Metiers\Manager\NiveauManager.cs" />
+    <Compile Include="Metiers\Manager\ProfesseurManager.cs" />
     <Compile Include="Metiers\Manager\QuestionManager.cs" />
     <Compile Include="Metiers\Manager\ReponseManager.cs" />
     <Compile Include="Metiers\Manager\UtilisateurManager.cs" />
     <Compile Include="Metiers\Niveau.cs" />
+    <Compile Include="Metiers\Professeur.cs" />
     <Compile Include="Metiers\Question.cs" />
     <Compile Include="Metiers\Reponse.cs" />
     <Compile Include="Metiers\Utilisateur.cs" />
