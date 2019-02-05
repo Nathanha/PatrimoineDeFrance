@@ -27,6 +27,7 @@ namespace PatrimoineDeFrance
         private List<Question> listQuestion = Question.ListQuestions();
         bool stateUser;
         bool connected;
+        bool isProfessor;
         // Question uneQuestion = new Question();
 
         public MainPage()
@@ -34,6 +35,7 @@ namespace PatrimoineDeFrance
             this.InitializeComponent();
             Debug.WriteLine("Test");
             stateUser = false;
+            isProfessor = true;
             if (Application.Current.Resources.ContainsKey("connected"))
             {
                 connected = (bool)Application.Current.Resources["connected"];
@@ -88,14 +90,26 @@ namespace PatrimoineDeFrance
 
         private void BtnCompte_Click(object sender, RoutedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(VueCompte));
+            if (isProfessor)
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(VueProf));
+            }else
+            { 
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(VueCompte));
+            }
         }
 
         private void BtnDeco_Click(object sender, RoutedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(VueAjouterEleve));
+            //Frame rootFrame = Window.Current.Content as Frame;
+            //rootFrame.Navigate(typeof(VueAjouterEleve));
+            connected = false;
+            inputName.Visibility = Visibility.Visible;
+            inputMdp.Visibility = Visibility.Visible;
+            btnValidation.Visibility = Visibility.Visible;
+            gridMain.Visibility = Visibility.Collapsed;
         }
     }
 }
