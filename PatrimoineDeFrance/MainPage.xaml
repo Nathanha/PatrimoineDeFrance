@@ -75,7 +75,8 @@
                      Header="Mot de passe:" PlaceholderText="Mot de passe"
                      HorizontalAlignment="Stretch"/>
         </StackPanel>
-        <Button x:Name="btnValidation" Content="Connexion" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnConnexion_Click" Margin="0,350,0,0"/>
+        <TextBlock x:Name="txtError" HorizontalAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" FontSize="25" Margin="0,250,0,0" Foreground="Red"/>
+        <Button x:Name="btnValidation" Content="Connexion" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnConnexion_Click" Margin="0,370,0,0"/>
 
 
         <Grid x:Name="gridMain">
