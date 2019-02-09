@@ -89,6 +89,7 @@ namespace dll.Metiers.Manager
         {
             item.Id = (int)dr["u_id"];
             item.Niveau = (NiveauIds)dr["u_niveau"];
+            item.NiveauId = (int)dr["u_niveau"];
             item.Nom = (string)dr["u_nom"];
             item.Prenom = (string)dr["u_prenom"];
             item.MotDePasse = (string)dr["u_motDePasse"];

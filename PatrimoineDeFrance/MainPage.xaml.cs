@@ -45,6 +45,10 @@ namespace PatrimoineDeFrance
                 inputMdp.Visibility = Visibility.Collapsed;
                 btnValidation.Visibility = Visibility.Collapsed;
                 gridMain.Visibility = Visibility.Visible;
+                if (Application.Current.Resources.ContainsKey("isProfessor"))
+                {
+                    isProfessor = (bool)Application.Current.Resources["isProfessor"];
+                }
             }
             else
             {
@@ -69,6 +73,8 @@ namespace PatrimoineDeFrance
             {
                 isProfessor = false;
                 Application.Current.Resources["connected"] = true;
+                Application.Current.Resources["utilisateur"] = utilisateur;
+                Application.Current.Resources["isProfessor"] = false;
                 inputName.Visibility = Visibility.Collapsed;
                 inputMdp.Visibility = Visibility.Collapsed;
                 btnValidation.Visibility = Visibility.Collapsed;
@@ -85,6 +91,7 @@ namespace PatrimoineDeFrance
                     isProfessor = true;
                     Application.Current.Resources["connected"] = true;
                     Application.Current.Resources["professeur"] = professeur;
+                    Application.Current.Resources["isProfessor"] = true;
                     inputName.Visibility = Visibility.Collapsed;
                     inputMdp.Visibility = Visibility.Collapsed;
                     btnValidation.Visibility = Visibility.Collapsed;

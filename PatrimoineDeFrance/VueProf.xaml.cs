@@ -35,7 +35,7 @@ namespace PatrimoineDeFrance
             this.InitializeComponent();
             lstBoxCours.ItemsSource = listCours;
             lstBoxQuiz.ItemsSource = listQuestions;
-            if (Application.Current.Resources.ContainsKey("connected"))
+            if (Application.Current.Resources.ContainsKey("professeur"))
             {
                 professeur = (Professeur)Application.Current.Resources["professeur"];
                 txtNom.Text = professeur.Nom;
@@ -104,7 +104,7 @@ namespace PatrimoineDeFrance
 
         private void BtnModifierCours_Click(object sender, RoutedEventArgs e)
         {
-            if (lstBoxEleve.SelectedItem != null)
+            if (lstBoxCours.SelectedItem != null)
             {
                 Application.Current.Resources["cours"] = (Cours)lstBoxCours.SelectedItem;
                 Frame rootFrame = Window.Current.Content as Frame;
@@ -129,7 +129,7 @@ namespace PatrimoineDeFrance
 
         private void BtnModifierQuiz_Click(object sender, RoutedEventArgs e)
         {
-            if (lstBoxEleve.SelectedItem != null)
+            if (lstBoxQuiz.SelectedItem != null)
             {
                 Application.Current.Resources["question"] = (Question)lstBoxQuiz.SelectedItem;
                 Frame rootFrame = Window.Current.Content as Frame;

@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using dll.Metiers;
+
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,9 +25,19 @@ namespace PatrimoineDeFrance
     /// </summary>
     public sealed partial class VueCompte : Page
     {
+        private Utilisateur utilisateur;
+
         public VueCompte()
         {
             this.InitializeComponent();
+            if (Application.Current.Resources.ContainsKey("utilisateur"))
+            {
+                utilisateur = (Utilisateur)Application.Current.Resources["utilisateur"];
+                txtNom.Text = utilisateur.Nom;
+                txtPrenom.Text = utilisateur.Prenom;
+                txtClasse.Text = utilisateur.Classe.ToString();
+                roundNiveau.Content = utilisateur.NiveauId.ToString();
+            }
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigated += OnRetour;
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;

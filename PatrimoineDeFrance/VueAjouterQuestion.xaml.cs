@@ -32,6 +32,7 @@ namespace PatrimoineDeFrance
                 question = (Question)Application.Current.Resources["question"];
                 reponse = Reponse.Load(question.BonneReponseId);
                 images = Images.Load(question.ImageId);
+                btnEnregistrerQuestion.Content = "Modifier";
                 questionInput.Text = question.Label;
                 reponseBonneInput.Text = reponse.Label;
                 urlInput.Text = images.Url;

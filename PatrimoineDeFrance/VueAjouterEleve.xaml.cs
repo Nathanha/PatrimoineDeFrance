@@ -32,6 +32,7 @@ namespace PatrimoineDeFrance
             if (Application.Current.Resources.ContainsKey("eleve"))
             {
                 utilisateur = (Utilisateur)Application.Current.Resources["eleve"];
+                btnEnregistrerEleve.Content = "Modifier";
                 nomInput.Text = utilisateur.Nom;
                 prenomInput.Text = utilisateur.Prenom;
                 classeInput.Text = utilisateur.Classe.ToString();

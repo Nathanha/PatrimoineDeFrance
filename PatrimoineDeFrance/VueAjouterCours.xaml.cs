@@ -34,6 +34,7 @@ namespace PatrimoineDeFrance
             {
                 cours = (Cours)Application.Current.Resources["cours"];
                 image = Images.Load(cours.ImageId);
+                btnAjouterCours.Content = "Modifier";
                 txtInput.Text = cours.Texte;
                 titreInput.Text = cours.Titre;
                 urlInput.Text = image.Url;

@@ -14,6 +14,7 @@ namespace dll.Metiers
         private string prenom;
         private string motdepasse;
         private NiveauIds niveau;
+        private int niveauId;
         private int classe;
 
         public int Id { get => id; set => id = value; }
@@ -21,6 +22,7 @@ namespace dll.Metiers
         public string Prenom { get => prenom; set => prenom = value; }
         public string MotDePasse { get => motdepasse; set => motdepasse = value; }
         public NiveauIds Niveau { get => niveau; set => niveau = value; }
+        public int NiveauId { get => niveauId; set => niveauId = value; }
         public int Classe { get => classe; set => classe = value; }
 
         public static Utilisateur Load(int id)
