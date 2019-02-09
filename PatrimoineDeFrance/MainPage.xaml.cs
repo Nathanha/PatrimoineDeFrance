@@ -26,6 +26,7 @@ namespace PatrimoineDeFrance
     {
         private List<Question> listQuestion = Question.ListQuestions();
         private Utilisateur utilisateur;
+        private Professeur professeur;
         bool stateUser;
         bool connected;
         bool isProfessor;
@@ -56,6 +57,7 @@ namespace PatrimoineDeFrance
             utilisateur = Utilisateur.GetUser(nomInput.Text);
             if (utilisateur.MotDePasse == mdpInput.Text)
             {
+                isProfessor = false;
                 inputName.Visibility = Visibility.Collapsed;
                 inputMdp.Visibility = Visibility.Collapsed;
                 btnValidation.Visibility = Visibility.Collapsed;
@@ -66,7 +68,22 @@ namespace PatrimoineDeFrance
             }
             else
             {
-                txtError.Text = "Mot de passe incorect";
+                professeur = Professeur.GetProfesseur(nomInput.Text);
+                if (professeur.MotDePasse == mdpInput.Text)
+                {
+                    isProfessor = true;
+                    inputName.Visibility = Visibility.Collapsed;
+                    inputMdp.Visibility = Visibility.Collapsed;
+                    btnValidation.Visibility = Visibility.Collapsed;
+                    txtError.Text = "";
+                    mdpInput.Text = "";
+                    nomInput.Text = "";
+                    gridMain.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    txtError.Text = "Mot de passe incorect";
+                }
             }
 
         }

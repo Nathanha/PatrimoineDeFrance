@@ -37,6 +37,5 @@ namespace dll.Metiers
         {
             return UtilisateurManager.GetUser(nom);
         }
-
     }
 }
