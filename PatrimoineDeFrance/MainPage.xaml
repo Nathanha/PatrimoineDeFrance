@@ -71,7 +71,7 @@
                      HorizontalAlignment="Stretch"/>
         </StackPanel>
         <StackPanel x:Name="inputMdp" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Margin="0,130,0,0">
-            <TextBox x:Name="mdpInput"
+            <PasswordBox x:Name="mdpInput"
                      Header="Mot de passe:" PlaceholderText="Mot de passe"
                      HorizontalAlignment="Stretch"/>
         </StackPanel>

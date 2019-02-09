@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using dll.Metiers;
+
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,9 +25,24 @@ namespace PatrimoineDeFrance
     /// </summary>
     public sealed partial class VueProf : Page
     {
+        private List<Cours> listCours = Cours.ListCours();
+        private List<Question> listQuestions = Question.ListQuestions();
+        private List<Utilisateur> listUsers;
+        private Professeur professeur;
+
         public VueProf()
         {
             this.InitializeComponent();
+            lstBoxCours.ItemsSource = listCours;
+            lstBoxQuiz.ItemsSource = listQuestions;
+            if (Application.Current.Resources.ContainsKey("connected"))
+            {
+                professeur = (Professeur)Application.Current.Resources["professeur"];
+                txtNom.Text = professeur.Nom;
+                txtPrenom.Text = professeur.Prenom;
+                listUsers = Utilisateur.ListClasse(professeur.Classe);
+                lstBoxEleve.ItemsSource = listUsers;
+            }
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigated += OnRetour;
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;

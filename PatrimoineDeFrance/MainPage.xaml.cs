@@ -37,10 +37,14 @@ namespace PatrimoineDeFrance
             this.InitializeComponent();
             Debug.WriteLine("Test");
             stateUser = false;
-            isProfessor = true;
+            isProfessor = false;
             if (Application.Current.Resources.ContainsKey("connected"))
             {
                 connected = (bool)Application.Current.Resources["connected"];
+                inputName.Visibility = Visibility.Collapsed;
+                inputMdp.Visibility = Visibility.Collapsed;
+                btnValidation.Visibility = Visibility.Collapsed;
+                gridMain.Visibility = Visibility.Visible;
             }
             else
             {
@@ -52,31 +56,40 @@ namespace PatrimoineDeFrance
             }
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+        }
+
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
         {
             utilisateur = Utilisateur.GetUser(nomInput.Text);
-            if (utilisateur.MotDePasse == mdpInput.Text)
+            if (utilisateur.MotDePasse == mdpInput.Password)
             {
                 isProfessor = false;
+                Application.Current.Resources["connected"] = true;
                 inputName.Visibility = Visibility.Collapsed;
                 inputMdp.Visibility = Visibility.Collapsed;
                 btnValidation.Visibility = Visibility.Collapsed;
                 txtError.Text = "";
-                mdpInput.Text = "";
+                mdpInput.Password = "";
                 nomInput.Text = "";
                 gridMain.Visibility = Visibility.Visible;
             }
             else
             {
                 professeur = Professeur.GetProfesseur(nomInput.Text);
-                if (professeur.MotDePasse == mdpInput.Text)
+                if (professeur.MotDePasse == mdpInput.Password)
                 {
                     isProfessor = true;
+                    Application.Current.Resources["connected"] = true;
+                    Application.Current.Resources["professeur"] = professeur;
                     inputName.Visibility = Visibility.Collapsed;
                     inputMdp.Visibility = Visibility.Collapsed;
                     btnValidation.Visibility = Visibility.Collapsed;
                     txtError.Text = "";
-                    mdpInput.Text = "";
+                    mdpInput.Password = "";
                     nomInput.Text = "";
                     gridMain.Visibility = Visibility.Visible;
                 }

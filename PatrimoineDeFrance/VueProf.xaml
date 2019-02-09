@@ -68,7 +68,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate x:Name="EleveDataTemplate">
                         <StackPanel Orientation="Horizontal" Height="44">
-                            <TextBlock x:Name="txtEleveList" Text="{Binding Titre}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
+                            <TextBlock x:Name="txtEleveListNom" Text="{Binding Nom}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
+                            <TextBlock x:Name="txtEleveListPrenom" Text="{Binding Prenom}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -86,7 +87,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate x:Name="QuizDataTemplate">
                         <StackPanel Orientation="Horizontal" Height="44">
-                            <TextBlock x:Name="txtQuizList" Text="{Binding Titre}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
+                            <TextBlock x:Name="txtQuizList" Text="{Binding Label}" VerticalAlignment="Center" FontSize="15" Width="300" Margin="10,0,0,0"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
