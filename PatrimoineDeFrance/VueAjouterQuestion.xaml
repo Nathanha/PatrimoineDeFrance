@@ -41,7 +41,7 @@
             <TextBlock x:Name="txtImage" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Text="Image" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
 
             <StackPanel x:Name="inputQuestion" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Margin="100,0,100,0">
-                <TextBox x:Name="QuestionInput" PlaceholderText="Question" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <TextBox x:Name="questionInput" PlaceholderText="Question" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
             <StackPanel x:Name="inputNiveau" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2" Grid.Column="0" Margin="100,0,100,0">
                 <TextBox x:Name="niveauInput" PlaceholderText="Niveau" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>

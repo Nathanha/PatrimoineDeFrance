@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using dll.Metiers;
+
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +24,18 @@ namespace PatrimoineDeFrance
     /// </summary>
     public sealed partial class VueAjouterEleve : Page
     {
+        private Utilisateur utilisateur;
+
         public VueAjouterEleve()
         {
             this.InitializeComponent();
+            if (Application.Current.Resources.ContainsKey("eleve"))
+            {
+                utilisateur = (Utilisateur)Application.Current.Resources["eleve"];
+                nomInput.Text = utilisateur.Nom;
+                prenomInput.Text = utilisateur.Prenom;
+                classeInput.Text = utilisateur.Classe.ToString();
+            }
         }
 
         private void BtnEnregistrerEleve_Click(object sender, RoutedEventArgs e)

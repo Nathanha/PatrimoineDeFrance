@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using dll.Metiers;
+
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +24,20 @@ namespace PatrimoineDeFrance
     /// </summary>
     public sealed partial class VueAjouterCours : Page
     {
+        private Cours cours;
+        private Images image;
+
         public VueAjouterCours()
         {
             this.InitializeComponent();
+            if (Application.Current.Resources.ContainsKey("cours"))
+            {
+                cours = (Cours)Application.Current.Resources["cours"];
+                image = Images.Load(cours.ImageId);
+                txtInput.Text = cours.Texte;
+                titreInput.Text = cours.Titre;
+                urlInput.Text = image.Url;
+            }
         }
 
         private void BtnAjouterCours_Click(object sender, RoutedEventArgs e)

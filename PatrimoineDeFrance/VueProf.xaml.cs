@@ -79,7 +79,16 @@ namespace PatrimoineDeFrance
 
         private void BtnModifierEleve_Click(object sender, RoutedEventArgs e)
         {
-
+            if (lstBoxEleve.SelectedItem != null)
+            {
+                Application.Current.Resources["eleve"] = (Utilisateur)lstBoxEleve.SelectedItem;
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(VueAjouterEleve));
+            }
+            else
+            {
+                //error
+            }
         }
 
         private void BtnSupprimerEleve_Click(object sender, RoutedEventArgs e)
@@ -95,7 +104,16 @@ namespace PatrimoineDeFrance
 
         private void BtnModifierCours_Click(object sender, RoutedEventArgs e)
         {
-
+            if (lstBoxEleve.SelectedItem != null)
+            {
+                Application.Current.Resources["cours"] = (Cours)lstBoxCours.SelectedItem;
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(VueAjouterCours));
+            }
+            else
+            {
+                //error
+            }
         }
 
         private void BtnSupprimerCours_Click(object sender, RoutedEventArgs e)
@@ -111,7 +129,16 @@ namespace PatrimoineDeFrance
 
         private void BtnModifierQuiz_Click(object sender, RoutedEventArgs e)
         {
-
+            if (lstBoxEleve.SelectedItem != null)
+            {
+                Application.Current.Resources["question"] = (Question)lstBoxQuiz.SelectedItem;
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(VueAjouterQuestion));
+            }
+            else
+            {
+                //error
+            }
         }
 
         private void BtnSupprimerQuiz_Click(object sender, RoutedEventArgs e)

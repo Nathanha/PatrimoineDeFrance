@@ -32,8 +32,8 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="txtEleve" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Quiz" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
-            <TextBlock x:Name="txtImage" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="Réponses" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
+            <TextBlock x:Name="txtEleve" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Text="Eleve" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
+            <TextBlock x:Name="txtImage" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="Image" TextWrapping="Wrap" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="40"/>
             <StackPanel x:Name="inputNom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Margin="150,0,150,0">
                 <TextBox x:Name="nomInput" PlaceholderText="Nom" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
