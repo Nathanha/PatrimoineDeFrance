@@ -41,7 +41,14 @@ namespace PatrimoineDeFrance
 
         private void BtnEnregistrerEleve_Click(object sender, RoutedEventArgs e)
         {
-
+            if (btnEnregistrerEleve.Content.ToString() == "Modifier")
+            {
+                //modifier eleve en bdd
+            }
+            else
+            {
+                //ajouter eleve en bdd
+            }
         }
     }
 }
