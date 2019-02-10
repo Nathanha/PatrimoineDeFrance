@@ -43,7 +43,14 @@ namespace PatrimoineDeFrance
 
         private void BtnAjouterCours_Click(object sender, RoutedEventArgs e)
         {
-
+            if (btnAjouterCours.Content.ToString() == "Modifier")
+            {
+                //modifier cours en bdd
+            }
+            else
+            {
+                //ajouter cours en bdd
+            }
         }
     }
 }

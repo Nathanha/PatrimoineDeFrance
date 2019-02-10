@@ -85,6 +85,25 @@ namespace dll.Metiers.Manager
             return uneQuestion;
         }
 
+        internal static void DeleteQuestion(int id)
+        {
+            string connStr = Utils.GetConn;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "DELETE FROM Question WHERE q_id = @id";
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@id", id));
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+
+                    }
+                }
+
+            }
+        }
+
         private static void fill(Question item, MySqlDataReader dr)
         {
             item.Id = (int)dr["q_id"];

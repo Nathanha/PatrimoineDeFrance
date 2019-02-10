@@ -41,7 +41,14 @@ namespace PatrimoineDeFrance
 
         private void BtnEnregistrerQuestion_Click(object sender, RoutedEventArgs e)
         {
-
+            if (btnEnregistrerQuestion.Content.ToString() == "Modifier")
+            {
+                //modifier question en bdd
+            }
+            else
+            {
+                //ajouter question en bdd
+            }
         }
     }
 }

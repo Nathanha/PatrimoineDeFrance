@@ -26,11 +26,18 @@ namespace PatrimoineDeFrance
     public sealed partial class VueCours : Page
     {
         private List<Cours> listCours = Cours.ListCours();
+        private Utilisateur utilisateur;
         //private Donnee mesCours;
 
         public VueCours()
         {
             this.InitializeComponent();
+            //chargement de l'utilisateur connecté
+            if (Application.Current.Resources.ContainsKey("utilisateur"))
+            {
+                utilisateur = (Utilisateur)Application.Current.Resources["utilisateur"];
+                txtUser.Text = utilisateur.Prenom;
+            }
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigated += OnRetour;
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;

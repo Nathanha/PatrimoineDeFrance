@@ -93,7 +93,16 @@ namespace PatrimoineDeFrance
 
         private void BtnSupprimerEleve_Click(object sender, RoutedEventArgs e)
         {
-
+            if (lstBoxEleve.SelectedItem != null)
+            {
+                Utilisateur user = (Utilisateur)lstBoxEleve.SelectedItem;
+                Utilisateur.Delete(user.Id);
+                listUsers.Remove(user);
+            }
+            else
+            {
+                //error
+            }
         }
 
         private void BtnAjouterCours_Click(object sender, RoutedEventArgs e)
@@ -118,7 +127,16 @@ namespace PatrimoineDeFrance
 
         private void BtnSupprimerCours_Click(object sender, RoutedEventArgs e)
         {
-
+            if (lstBoxCours.SelectedItem != null)
+            {
+                Cours cours = (Cours)lstBoxCours.SelectedItem;
+                Cours.DeleteCours(cours.Id);
+                listCours.Remove(cours);
+            }
+            else
+            {
+                //error
+            }
         }
 
         private void BtnAjouterQuiz_Click(object sender, RoutedEventArgs e)
@@ -143,7 +161,16 @@ namespace PatrimoineDeFrance
 
         private void BtnSupprimerQuiz_Click(object sender, RoutedEventArgs e)
         {
-
+            if (lstBoxQuiz.SelectedItem != null)
+            {
+                Question question = (Question)lstBoxQuiz.SelectedItem;
+                Question.DeleteQuestion(question.Id);
+                listQuestions.Remove(question);
+            }
+            else
+            {
+                //error
+            }
         }
     }
 }
