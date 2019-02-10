@@ -10,12 +10,12 @@ namespace PatrimoineTestUnitaire
     public class CoursTest
     {
 
-        string connStr = Utils.GetConn;
+        private static string connStr = "server=137.74.114.61;user=PatrimoineProjet;database=PatrimoineProjet;port=3306;password=mny2018";
         private int idTest;
         [TestMethod]
         public void Load_Reponse()
         {
-           
+            string connStr = Utils.GetConn;
             idTest = 1;
             Cours cours = new Cours();
             using (MySqlConnection conn = new MySqlConnection(connStr))

@@ -12,6 +12,7 @@ namespace PatrimoineTestUnitaire
 
         string connStr = Utils.GetConn; private bool isProfesseur = false;
         private int idTest;
+        private string nomTest;
         [TestMethod]
         public void Load_Utilisateur()
         {
@@ -86,7 +87,39 @@ namespace PatrimoineTestUnitaire
                 Assert.IsFalse(isProfesseur, "This is NOT a prfosseur");
                 Trace.WriteLine("This is NOT a prof. ==> Nom: " + utilisateur.Nom + " Prenom: " + utilisateur.Prenom + " Id: " + utilisateur.Id);
             }
+        }
 
+        [DataTestMethod]
+        public void GetUserTest()
+        {
+            Trace.WriteLine("GetUserTest()");
+            nomTest = "Varga";
+            Utilisateur utilisateur = new Utilisateur();
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "SELECT * FROM Utilisateur WHERE u_nom = @nom";
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@nom", nomTest));
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            utilisateur.Id = (int)dr["u_id"];
+                            utilisateur.NiveauId = (int)dr["u_niveau"];
+                            utilisateur.Nom = (string)dr["u_nom"];
+                            utilisateur.Prenom = (string)dr["u_prenom"];
+                            utilisateur.MotDePasse = (string)dr["u_motDePasse"];
+                            utilisateur.Role = (int)dr["u_role"];
+
+                        }
+                    }
+                }
+            }
+                Assert.AreEqual(utilisateur.Nom, nomTest);
+                Trace.WriteLine("utilisateur.Nom: " + utilisateur.Nom+ " nomTest: "+nomTest + " Prenom: " + utilisateur.Prenom + " Id: " + utilisateur.Id);
+         
         }
     }
     
