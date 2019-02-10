@@ -31,6 +31,12 @@ namespace PatrimoineDeFrance
         public VueQuiz()
         {
             this.InitializeComponent();
+            //chargement de l'utilisateur connecté
+            if (Application.Current.Resources.ContainsKey("utilisateur"))
+            {
+                utilisateur = (Utilisateur)Application.Current.Resources["utilisateur"];
+                txtUser.Text = utilisateur.Prenom;
+            }
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigated += OnRetour;
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;

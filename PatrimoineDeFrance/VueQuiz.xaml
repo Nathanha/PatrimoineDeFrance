@@ -125,7 +125,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Button x:Name="btnUser" Grid.Row="0" Style="{StaticResource ButtonStyleUser}" Height="70" Width="70" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Click="btnUser_Click"/>
-            <TextBlock Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,80,0" Text="Utilisateur" TextWrapping="Wrap" VerticalAlignment="Center" Height="25" Width="120" FontSize="20" TextAlignment="Center"/>
+            <TextBlock x:Name="txtUser" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,80,0" Text="Utilisateur" TextWrapping="Wrap" VerticalAlignment="Center" Height="25" Width="120" FontSize="20" TextAlignment="Center"/>
 
             <TextBlock x:Name="questionTextBlock" Grid.Row="1" FontSize="25" TextAlignment="Center" HorizontalAlignment="Center"  Text="Question ?" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="650"/>
 
