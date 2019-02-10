@@ -25,5 +25,10 @@ namespace dll.Metiers
         {
             return CoursManager.ListCours();
         }
+
+        public static void DeleteCours(int id)
+        {
+            CoursManager.DeleteCours(id);
+        }
     }
 }

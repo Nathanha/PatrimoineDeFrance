@@ -33,6 +33,24 @@ namespace dll.Metiers.Manager
             return listCours;
         }
 
+        internal static void DeleteCours(int id)
+        {
+            string connStr = Utils.GetConn;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "DELETE FROM Cours WHERE c_id = @id";
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@id", id));
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+
+                    }
+                }
+            }
+        }
+
         private static void fill(Cours item, MySqlDataReader dr)
         {
             item.Id = (int)dr["c_id"];

@@ -46,5 +46,10 @@ namespace dll.Metiers
         {
             return QuestionManager.ListQuestions(niveau);
         }
+
+        public static void DeleteQuestion(int id)
+        {
+            QuestionManager.DeleteQuestion(id);
+        }
     }
 }

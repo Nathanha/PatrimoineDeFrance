@@ -33,6 +33,24 @@ namespace dll.Metiers.Manager
             return utilisateur;
         }
 
+        internal static void Delete(int id)
+        {
+            string connStr = Utils.GetConn;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "DELETE FROM Utilisateur WHERE u_id = @id";
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@id", id));
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+
+                    }
+                }
+            }
+        }
+
 
         internal static List<Utilisateur> ListClasse(int numero)
         {
