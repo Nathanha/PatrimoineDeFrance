@@ -93,6 +93,7 @@ namespace dll.Metiers.Manager
             item.Nom = (string)dr["u_nom"];
             item.Prenom = (string)dr["u_prenom"];
             item.MotDePasse = (string)dr["u_motDePasse"];
+            item.Role = (int)dr["u_role"];
         }
 
     }
