@@ -15,9 +15,15 @@ namespace dll.Metiers
         public string Url { get => url; set => url = value; }
         public int Id { get => id; set => id = value; }
 
+        public Images Save()
+        {
+            return ImagesManager.Save(this);
+        }
+
         public static Images Load(int id)
         {
             return ImagesManager.Load(id);
         }
+
     }
 }

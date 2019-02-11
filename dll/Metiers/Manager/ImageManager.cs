@@ -33,6 +33,36 @@ namespace dll.Metiers.Manager
             return img;
         }
 
+        internal static Images Save(Images image)
+        {
+            string connStr = Utils.GetConn;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "INSERT INTO Image VALUES (@id, @url)";
+                if (image.Id != 0)
+                {
+                    sql = "UPDATE Utilisateur SET img_yrl = @url WHERE img_id = @id";
+                }
+
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@id", image.Id));
+                    cmd.Parameters.Add(new MySqlParameter("@nom", image.Url));
+
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            fill(image, dr);
+                        }
+                    }
+                }
+            }
+
+            return image;
+        }
+
         private static void fill(Images item, MySqlDataReader dr)
         {
             item.Id = (int)dr["img_id"];

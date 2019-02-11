@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using dll.Metiers;
+using dll;
 
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
@@ -53,11 +54,30 @@ namespace PatrimoineDeFrance
         {
             if (btnAjouterCours.Content.ToString() == "Modifier")
             {
-                //modifier cours en bdd
+                //modifier cours
+                Images image = new Images();
+                image.Url = urlInput.Text;
+                image.Save();
+                cours.ImageId = image.Id;
+                cours.Texte = txtInput.Text;
+                cours.Titre = titreInput.Text;
+                cours.Save();
+
+                Utils.ShowDialog("Modification", "Cours modifié");
             }
             else
             {
                 //ajouter cours en bdd
+                Images image = new Images();
+                image.Url = urlInput.Text;
+                image.Save();
+                cours = new Cours();
+                cours.ImageId = image.Id;
+                cours.Texte = txtInput.Text;
+                cours.Titre = titreInput.Text;
+                cours.Save();
+
+                Utils.ShowDialog("Insertion", "Cours inséré");
             }
         }
     }

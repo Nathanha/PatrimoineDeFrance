@@ -56,7 +56,7 @@ namespace PatrimoineDeFrance
                 utilisateur.MotDePasse = mdpInput.Text;
                 utilisateur.Classe = Convert.ToInt32(classeInput.Text);
                 utilisateur.Save();
-                Utils.ShowDialog("Insertion", "Utilisateur modifié");
+                Utils.ShowDialog("Modification", "Utilisateur modifié");
             }
             else
             {
