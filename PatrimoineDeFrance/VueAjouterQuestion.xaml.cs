@@ -39,6 +39,14 @@ namespace PatrimoineDeFrance
             }
         }
 
+        public Images Images
+        {
+            get => default(Images);
+            set
+            {
+            }
+        }
+
         private void BtnEnregistrerQuestion_Click(object sender, RoutedEventArgs e)
         {
             if (btnEnregistrerQuestion.Content.ToString() == "Modifier")

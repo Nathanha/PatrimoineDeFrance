@@ -50,6 +50,22 @@ namespace PatrimoineDeFrance
             txtCour.Text = listCours[0].Texte;
         }
 
+        public Cours Cours
+        {
+            get => default(Cours);
+            set
+            {
+            }
+        }
+
+        public Images Images
+        {
+            get => default(Images);
+            set
+            {
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);

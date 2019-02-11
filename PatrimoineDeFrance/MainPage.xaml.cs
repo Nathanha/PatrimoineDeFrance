@@ -60,6 +60,46 @@ namespace PatrimoineDeFrance
             }
         }
 
+        public VueCours VueCours
+        {
+            get => default(VueCours);
+            set
+            {
+            }
+        }
+
+        public VueQuiz VueQuiz
+        {
+            get => default(VueQuiz);
+            set
+            {
+            }
+        }
+
+        public VueProf VueProf
+        {
+            get => default(VueProf);
+            set
+            {
+            }
+        }
+
+        public VueCompte VueCompte
+        {
+            get => default(VueCompte);
+            set
+            {
+            }
+        }
+
+        public Utilisateur Utilisateur
+        {
+            get => default(Utilisateur);
+            set
+            {
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);

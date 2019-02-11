@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PatrimoineDeFrance.MainPage">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBCiBABAAEAAAAJAAAAAAAQAIAkAAAAAABIAAAAAQAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="VueCours" />
+      <Property Name="VueQuiz" />
+      <Property Name="VueProf" />
+      <Property Name="VueCompte" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatrimoineDeFrance.VueProf">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAIAAAAAAAAAQBAAgQAAAggAAAIhAEAAYASIAA=</HashCode>
+      <FileName>VueProf.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="VueAjouterEleve" />
+      <Property Name="VueAjouterQuestion" />
+      <Property Name="VueAjouterCours" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatrimoineDeFrance.VueAjouterCours">
+    <Position X="10.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAEAAAABAAAAEAAAAAAAA=</HashCode>
+      <FileName>VueAjouterCours.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Images" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatrimoineDeFrance.VueAjouterEleve">
+    <Position X="10.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>VueAjouterEleve.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatrimoineDeFrance.VueAjouterQuestion">
+    <Position X="10.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAECQAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>VueAjouterQuestion.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Images" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatrimoineDeFrance.VueCompte">
+    <Position X="1.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAABAAAAAAgQAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>VueCompte.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Utilisateur" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatrimoineDeFrance.VueCours">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAABAAIEAAgQAIAAAABAIgAAAAAAAAAA=</HashCode>
+      <FileName>VueCours.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cours" />
+      <Property Name="Images" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatrimoineDeFrance.VueQuiz">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAQAAAABAAAABIgQAIAAAABCMAAAAAIQBCAA=</HashCode>
+      <FileName>VueQuiz.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Images" />
+      <Property Name="Question" />
+      <Property Name="Reponse" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="dll.Metiers.Cours">
+    <Position X="8.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="dll.Metiers.Images">
+    <Position X="13.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="dll.Metiers.Question">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="dll.Metiers.Reponse">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="dll.Metiers.Utilisateur">
+    <Position X="1.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

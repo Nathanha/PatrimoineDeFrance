@@ -48,6 +48,30 @@ namespace PatrimoineDeFrance
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
         }
 
+        public VueAjouterEleve VueAjouterEleve
+        {
+            get => default(VueAjouterEleve);
+            set
+            {
+            }
+        }
+
+        public VueAjouterQuestion VueAjouterQuestion
+        {
+            get => default(VueAjouterQuestion);
+            set
+            {
+            }
+        }
+
+        public VueAjouterCours VueAjouterCours
+        {
+            get => default(VueAjouterCours);
+            set
+            {
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);

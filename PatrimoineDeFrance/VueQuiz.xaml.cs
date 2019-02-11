@@ -62,6 +62,30 @@ namespace PatrimoineDeFrance
             showQuestions(NiveauIds.Niveau1);
         }
 
+        public Images Images
+        {
+            get => default(Images);
+            set
+            {
+            }
+        }
+
+        public Question Question
+        {
+            get => default(Question);
+            set
+            {
+            }
+        }
+
+        public Reponse Reponse
+        {
+            get => default(Reponse);
+            set
+            {
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);

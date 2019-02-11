@@ -43,6 +43,14 @@ namespace PatrimoineDeFrance
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
         }
 
+        public Utilisateur Utilisateur
+        {
+            get => default(Utilisateur);
+            set
+            {
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);

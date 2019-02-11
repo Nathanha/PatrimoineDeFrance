@@ -41,6 +41,14 @@ namespace PatrimoineDeFrance
             }
         }
 
+        public Images Images
+        {
+            get => default(Images);
+            set
+            {
+            }
+        }
+
         private void BtnAjouterCours_Click(object sender, RoutedEventArgs e)
         {
             if (btnAjouterCours.Content.ToString() == "Modifier")
