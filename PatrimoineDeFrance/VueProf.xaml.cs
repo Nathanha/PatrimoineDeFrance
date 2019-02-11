@@ -43,6 +43,11 @@ namespace PatrimoineDeFrance
                 listUsers = Utilisateur.ListClasse(professeur.Classe);
                 lstBoxEleve.ItemsSource = listUsers;
             }
+
+            Application.Current.Resources.Remove("eleve");
+            Application.Current.Resources.Remove("cours");
+            Application.Current.Resources.Remove("quizz");
+
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigated += OnRetour;
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
@@ -75,6 +80,7 @@ namespace PatrimoineDeFrance
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(VueAjouterEleve));
+            Application.Current.Resources.Remove("eleve");
         }
 
         private void BtnModifierEleve_Click(object sender, RoutedEventArgs e)

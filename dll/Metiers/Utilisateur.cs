@@ -42,6 +42,11 @@ namespace dll.Metiers
             return UtilisateurManager.GetUser(nom);
         }
 
+        public Utilisateur Save()
+        {
+            return UtilisateurManager.Save(this);
+        }
+
         public static void Delete(int id)
         {
             UtilisateurManager.Delete(id);

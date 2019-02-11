@@ -58,6 +58,10 @@ namespace PatrimoineDeFrance
                 btnValidation.Visibility = Visibility.Visible;
                 gridMain.Visibility = Visibility.Collapsed;
             }
+
+            Application.Current.Resources.Remove("eleve");
+            Application.Current.Resources.Remove("cours");
+            Application.Current.Resources.Remove("quizz");
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

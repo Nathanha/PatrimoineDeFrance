@@ -38,6 +38,7 @@ namespace PatrimoineDeFrance
                 txtClasse.Text = utilisateur.Classe.ToString();
                 roundNiveau.Content = utilisateur.NiveauId.ToString();
             }
+            
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigated += OnRetour;
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;

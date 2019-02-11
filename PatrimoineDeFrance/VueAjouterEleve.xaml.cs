@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using dll.Metiers;
+using dll;
 
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
@@ -36,6 +37,9 @@ namespace PatrimoineDeFrance
                 nomInput.Text = utilisateur.Nom;
                 prenomInput.Text = utilisateur.Prenom;
                 classeInput.Text = utilisateur.Classe.ToString();
+            } else
+            {
+                btnEnregistrerEleve.Content = "Enregistrer";
             }
         }
 
@@ -44,10 +48,25 @@ namespace PatrimoineDeFrance
             if (btnEnregistrerEleve.Content.ToString() == "Modifier")
             {
                 //modifier eleve en bdd
+                utilisateur.Nom = nomInput.Text;
+                utilisateur.Prenom = prenomInput.Text;
+                utilisateur.Classe = Convert.ToInt32(classeInput.Text);
+                utilisateur.Save();
+                Utils.ShowDialog("Insertion", "Utilisateur modifié");
             }
             else
             {
                 //ajouter eleve en bdd
+                utilisateur = new Utilisateur();
+                utilisateur.MotDePasse = "nouveauMDP";
+                utilisateur.NiveauId = 1;
+                utilisateur.Role = 0;
+                utilisateur.Nom = nomInput.Text;
+                utilisateur.Prenom = prenomInput.Text;
+                utilisateur.Classe = Convert.ToInt32(classeInput.Text);
+                utilisateur.Save();
+
+                Utils.ShowDialog("Insertion", "Utilisateur inséré");
             }
         }
     }
