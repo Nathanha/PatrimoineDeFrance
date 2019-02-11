@@ -32,6 +32,11 @@ namespace dll.Metiers
         public int BonneReponseId { get => bonneReponseId; set => bonneReponseId = value; }
         public int ImageId { get => imageId; set => imageId = value; }
 
+        public Question Save()
+        {
+            return QuestionManager.Save(this);
+        }
+
         public static Question Load(int id)
         {
             return QuestionManager.Load(id);

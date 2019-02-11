@@ -41,14 +41,14 @@ namespace dll.Metiers.Manager
                 string sql = "INSERT INTO Image VALUES (@id, @url)";
                 if (image.Id != 0)
                 {
-                    sql = "UPDATE Utilisateur SET img_yrl = @url WHERE img_id = @id";
+                    sql = "UPDATE Image SET img_url = @url WHERE img_id = @id";
                 }
 
                 conn.Open();
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@id", image.Id));
-                    cmd.Parameters.Add(new MySqlParameter("@nom", image.Url));
+                    cmd.Parameters.Add(new MySqlParameter("@url", image.Url));
 
                     using (MySqlDataReader dr = cmd.ExecuteReader())
                     {
