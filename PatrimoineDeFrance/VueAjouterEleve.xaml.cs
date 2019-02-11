@@ -37,6 +37,7 @@ namespace PatrimoineDeFrance
                 btnEnregistrerEleve.Content = "Modifier";
                 nomInput.Text = utilisateur.Nom;
                 prenomInput.Text = utilisateur.Prenom;
+                mdpInput.Text = utilisateur.MotDePasse;
                 classeInput.Text = utilisateur.Classe.ToString();
             } else
             {
@@ -52,6 +53,7 @@ namespace PatrimoineDeFrance
                 //modifier eleve en bdd
                 utilisateur.Nom = nomInput.Text;
                 utilisateur.Prenom = prenomInput.Text;
+                utilisateur.MotDePasse = mdpInput.Text;
                 utilisateur.Classe = Convert.ToInt32(classeInput.Text);
                 utilisateur.Save();
                 Utils.ShowDialog("Insertion", "Utilisateur modifié");
@@ -60,7 +62,7 @@ namespace PatrimoineDeFrance
             {
                 //ajouter eleve en bdd
                 utilisateur = new Utilisateur();
-                utilisateur.MotDePasse = "nouveauMDP";
+                utilisateur.MotDePasse = mdpInput.Text;
                 utilisateur.NiveauId = 1;
                 utilisateur.Role = 0;
                 utilisateur.Nom = nomInput.Text;
