@@ -102,6 +102,41 @@ namespace dll.Metiers.Manager
             return utilisateur;
         }
 
+        internal static Utilisateur Save(Utilisateur utilisateur)
+        {
+            string connStr = Utils.GetConn;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "INSERT INTO Utilisateur VALUES (@id, @nom, @prenom, @mdp, @niveau, @classe, @role)";
+                if(utilisateur.Id != 0)
+                {
+                    sql = "UPDATE Utilisateur SET u_nom = @nom, u_prenom = @prenom, u_motDePasse = @mdp, u_niveau = @niveau, u_classe = @classe, u_role = @role WHERE u_id = @id";
+                }
+                
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@id", utilisateur.Id));
+                    cmd.Parameters.Add(new MySqlParameter("@nom", utilisateur.Nom));
+                    cmd.Parameters.Add(new MySqlParameter("@prenom", utilisateur.Prenom));
+                    cmd.Parameters.Add(new MySqlParameter("@mdp", utilisateur.MotDePasse));
+                    cmd.Parameters.Add(new MySqlParameter("@niveau", utilisateur.NiveauId));
+                    cmd.Parameters.Add(new MySqlParameter("@classe", utilisateur.Classe));
+                    cmd.Parameters.Add(new MySqlParameter("@role", utilisateur.Role));
+
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            fill(utilisateur, dr);
+                        }
+                    }
+                }
+            }
+
+            return utilisateur;
+        }
+
 
         internal static void fill(Utilisateur item, MySqlDataReader dr)
         {
