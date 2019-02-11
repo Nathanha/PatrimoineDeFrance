@@ -21,6 +21,11 @@ namespace dll.Metiers
         public int ImageId { get => imageId; set => imageId = value; }
         public string Titre { get => titre; set => titre = value; }
 
+        public Cours Save()
+        {
+            return CoursManager.Save(this);
+        }
+
         public static List<Cours> ListCours()
         {
             return CoursManager.ListCours();
