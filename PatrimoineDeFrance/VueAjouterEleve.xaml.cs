@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using dll.Metiers;
 using dll;
+using System.Diagnostics;
 
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=234238
@@ -45,6 +46,7 @@ namespace PatrimoineDeFrance
 
         private void BtnEnregistrerEleve_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine("ENREGISTRER");
             if (btnEnregistrerEleve.Content.ToString() == "Modifier")
             {
                 //modifier eleve en bdd

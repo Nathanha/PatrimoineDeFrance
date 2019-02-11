@@ -41,7 +41,7 @@
                 <TextBox x:Name="prenomInput" PlaceholderText="Prenom" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
             <StackPanel x:Name="inputNaissance" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="3" Grid.Column="0" Margin="150,0,150,0">
-                <TextBox x:Name="naissanceInput" PlaceholderText="Date de naissance" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <TextBox x:Name="mdpInput" PlaceholderText="Mot de passe" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
             <StackPanel x:Name="inputClasse" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="4" Grid.Column="0" Margin="150,0,150,0">
                 <TextBox x:Name="classeInput" PlaceholderText="Classe" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
