@@ -125,6 +125,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Diagramme_de_classe.cd" />
     <None Include="PatrimoineDeFrance_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

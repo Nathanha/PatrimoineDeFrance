@@ -10,7 +10,6 @@ namespace PatrimoineTestUnitaire
     public class CoursTest
     {
 
-        private static string connStr = "server=137.74.114.61;user=PatrimoineProjet;database=PatrimoineProjet;port=3306;password=mny2018";
         private int idTest;
         [TestMethod]
         public void Load_Reponse()
