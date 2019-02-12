@@ -7,7 +7,7 @@ Nom des Etudiants:
 
 - Nathan Haro
 - Mihaly Varga
-- Maine Bensassi Nour
+- Maïne Bensassi nour
 - Yohann Guerpillon
 
 ## User Story
