@@ -52,10 +52,23 @@ namespace PatrimoineDeFrance
             if (btnEnregistrerQuestion.Content.ToString() == "Modifier")
             {
                 //modifier question en bdd
+                question.Label = questionInput.Text;
+                reponse.Label = reponseBonneInput.Text;
+
+                question.Save();
+                reponse.Save();
             }
             else
             {
                 //ajouter question en bdd
+                question = new Question();
+                reponse = new Reponse();
+
+                question.Label = questionInput.Text;
+                reponse.Label = reponseBonneInput.Text;
+
+                question.Save();
+                reponse.Save();
             }
         }
     }

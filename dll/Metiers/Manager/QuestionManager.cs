@@ -104,6 +104,37 @@ namespace dll.Metiers.Manager
             }
         }
 
+        internal static Question Save(Question question)
+        {
+            string connStr = Utils.GetConn;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "INSERT INTO Question VALUES (@id, @texte, @niveau, @reponseId, @imageId)";
+                if (question.Id != 0)
+                {
+                    sql = "UPDATE Question SET q_texte = @texte, q_niveau = @niveau, u_reponseId = @reponseId, q_imageId = @imageId WHERE q_id = @id";
+                }
+
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@id", question.Id));
+                    cmd.Parameters.Add(new MySqlParameter("@texte", question.Label));
+                    cmd.Parameters.Add(new MySqlParameter("@niveau", question.Niveau));
+                    cmd.Parameters.Add(new MySqlParameter("@reponseId", question.BonneReponseId));
+                    cmd.Parameters.Add(new MySqlParameter("@imageId", question.ImageId));
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            fill(question, dr);
+                        }
+                    }
+                }
+            }
+            return question;
+        }
+
         private static void fill(Question item, MySqlDataReader dr)
         {
             item.Id = (int)dr["q_id"];
