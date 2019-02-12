@@ -5,10 +5,10 @@ Notre projet est une application Windows regroupant des cours et des quizz sur l
 
 Nom des Etudiants:
 
-- Nathan Haro
-- Mihaly Varga
-- Maïne Bensassi nour
-- Yohann Guerpillon
+- Nathan Haro : Nathanha
+- Mihaly Varga : mihalyvarga
+- Maïne Bensassi nour : Ma3ine
+- Yohann Guerpillon : YohannNissa
 
 ## User Story
 ![Image User Story](https://github.com/Nathanha/PatrimoineDeFrance/blob/master/assets/img/UserStory.PNG)
