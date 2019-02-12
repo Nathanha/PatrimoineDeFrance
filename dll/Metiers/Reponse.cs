@@ -11,17 +11,21 @@ namespace dll.Metiers
     {
         private int id;
         private string label;
+        private int niveauId;
 
         public Reponse() { }
 
-        public Reponse(int id, string label)
+        public Reponse(int id, string label, int niveauId)
         {
             this.id = id;
             this.label = label;
+            this.niveauId = niveauId;
         }
 
         public int Id { get => id; set => id = value; }
         public string Label { get => label; set => label = value; }
+        public int NiveauId { get => niveauId; set => niveauId = value; }
+
 
         public Question Question
         {
@@ -29,6 +33,12 @@ namespace dll.Metiers
             set
             {
             }
+        }
+
+
+        public Reponse Save()
+        {
+            return ReponseManager.Save(this);
         }
 
         public static Reponse Load(int id)

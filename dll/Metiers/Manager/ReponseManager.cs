@@ -68,6 +68,35 @@ namespace dll.Metiers.Manager
             return listReponse;
         }
 
+        internal static Reponse Save(Reponse reponse)
+        {
+            string connStr = Utils.GetConn;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string sql = "INSERT INTO Reponse VALUES (@id, @texte, @niveau)";
+                if (reponse.Id != 0)
+                {
+                    sql = "UPDATE Reponse SET r_texte = @texte, r_niveau = @niveau WHERE r_id = @id";
+                }
+
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@id", reponse.Id));
+                    cmd.Parameters.Add(new MySqlParameter("@texte", reponse.Label));
+                    cmd.Parameters.Add(new MySqlParameter("@niveau", reponse.NiveauId));
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            fill(reponse, dr);
+                        }
+                    }
+                }
+            }
+            return reponse;
+        }
+
 
         private static void fill(Reponse item, MySqlDataReader dr)
         {
