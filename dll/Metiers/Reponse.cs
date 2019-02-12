@@ -23,6 +23,14 @@ namespace dll.Metiers
         public int Id { get => id; set => id = value; }
         public string Label { get => label; set => label = value; }
 
+        public Question Question
+        {
+            get => default(Question);
+            set
+            {
+            }
+        }
+
         public static Reponse Load(int id)
         {
             return ReponseManager.Load(id);

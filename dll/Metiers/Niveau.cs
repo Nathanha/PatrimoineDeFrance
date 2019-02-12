@@ -24,6 +24,14 @@ namespace dll.Metiers
         public string Label { get => label; set => label = value; }
         public NiveauIds Id { get => id; set => id = value; }
 
+        public NiveauIds NiveauIds
+        {
+            get => default(NiveauIds);
+            set
+            {
+            }
+        }
+
         public static List<Niveau> ListNiveau()
         {
             return NiveauManager.ListNiveau();

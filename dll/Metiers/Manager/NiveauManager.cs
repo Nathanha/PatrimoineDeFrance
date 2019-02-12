@@ -9,6 +9,14 @@ namespace dll.Metiers.Manager
 {
     internal static class NiveauManager
     {
+        public Niveau Niveau
+        {
+            get => default(Niveau);
+            set
+            {
+            }
+        }
+
         internal static List<Niveau> ListNiveau()
         {
             List<Niveau> listNiveau = new List<Niveau>();

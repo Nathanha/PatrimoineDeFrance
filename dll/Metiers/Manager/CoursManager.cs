@@ -9,6 +9,14 @@ namespace dll.Metiers.Manager
 {
     internal static class CoursManager
     {
+        public Cours Cours
+        {
+            get => default(Cours);
+            set
+            {
+            }
+        }
+
         internal static List<Cours> ListCours()
         {
             List<Cours> listCours = new List<Cours>();
