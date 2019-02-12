@@ -9,13 +9,13 @@ namespace dll.Metiers.Manager
 {
     internal static class ReponseManager
     {
-        public Reponse Reponse
-        {
-            get => default(Reponse);
-            set
-            {
-            }
-        }
+        //public Reponse Reponse
+        //{
+        //    get => default(Reponse);
+        //    set
+        //    {
+        //    }
+        //}
 
         internal static Reponse Load(int id)
         {
